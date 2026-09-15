@@ -1,0 +1,14 @@
+Feature,Importance
+numeric__BMI,0.19248141838159002
+categorical__BMIcase_severe obese,0.11317646120865447
+categorical__BMIcase_over weight,0.11227834973828708
+categorical__BMIcase_normal,0.1073433321115243
+categorical__BMIcase_obese,0.10564986955948849
+categorical__BMIcase_mild thinness,0.10420852217358353
+categorical__BMIcase_moderate thinness,0.10018492442333951
+categorical__BMIcase_sever thinness,0.08954906580212553
+numeric__Weight,0.044121716842845514
+numeric__Height,0.01343493381222358
+categorical__Gender_Male,0.008573516454240905
+categorical__Gender_Female,0.008298597835731666
+numeric__Age,0.0006992916563653265

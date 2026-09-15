@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="AI Fitness Pro - Personalized AI Fitness and Diet Recommendation System"
+    >
+
+    <title>AI Fitness Pro</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="theme-light accent-blue">
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="main-header">
+
+    <div class="header-container">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                <i class="fa-solid fa-dumbbell"></i>
+            </div>
+
+            <div>
+                <h1>AI Fitness Pro</h1>
+                <span>Intelligent Fitness Assistant</span>
+            </div>
+
+        </div>
+
+        <div class="header-settings">
+
+            <div class="setting-item">
+
+                <label for="themeSelector">
+                    <i class="fa-solid fa-palette"></i>
+                </label>
+
+                <select id="themeSelector">
+
+                    <option value="theme-light">Light</option>
+                    <option value="theme-dark">Dark</option>
+                    <option value="theme-neon">Neon</option>
+                    <option value="theme-glass">Glass</option>
+
+                </select>
+
+            </div>
+
+            <div class="setting-item">
+
+                <label for="accentSelector">
+                    <i class="fa-solid fa-droplet"></i>
+                </label>
+
+                <select id="accentSelector">
+
+                    <option value="accent-blue">Blue</option>
+                    <option value="accent-green">Green</option>
+                    <option value="accent-purple">Purple</option>
+                    <option value="accent-orange">Orange</option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero-section">
+
+    <div class="hero-content">
+
+        <div class="hero-text">
+
+            <span class="hero-badge">
+                <i class="fa-solid fa-robot"></i>
+                AI Powered
+            </span>
+
+            <h2>
+                Your Personal
+                <span>AI Fitness Coach</span>
+            </h2>
+
+            <p>
+                Get a personalized fitness, workout, diet and
+                calorie recommendation based on your body
+                measurements and lifestyle.
+            </p>
+
+        </div>
+
+        <div class="hero-icon">
+            <i class="fa-solid fa-person-running"></i>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="main-container">
+
+<!-- =========================================================
+     INPUT CARD
+========================================================= -->
+
+<section class="input-card card">
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                <i class="fa-solid fa-user"></i>
+                Personal Information
+            </span>
+
+            <h2>Tell us about yourself</h2>
+
+            <p>
+                Enter your information to generate your
+                personalized AI fitness plan.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="fitness-form">
+
+        <div class="form-group">
+
+            <label for="age">
+                <i class="fa-solid fa-cake-candles"></i>
+                Age
+            </label>
+
+            <input
+                type="number"
+                id="age"
+                placeholder="Enter your age"
+                min="10"
+                max="100"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="height">
+                <i class="fa-solid fa-ruler-vertical"></i>
+                Height (cm)
+            </label>
+
+            <input
+                type="number"
+                id="height"
+                placeholder="e.g. 175"
+                min="100"
+                max="250"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="weight">
+                <i class="fa-solid fa-weight-scale"></i>
+                Weight (kg)
+            </label>
+
+            <input
+                type="number"
+                id="weight"
+                placeholder="e.g. 75"
+                min="25"
+                max="300"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="gender">
+                <i class="fa-solid fa-venus-mars"></i>
+                Gender
+            </label>
+
+            <select id="gender">
+
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="goal">
+                <i class="fa-solid fa-bullseye"></i>
+                Fitness Goal
+            </label>
+
+            <select id="goal">
+
+                <option value="Weight Loss">Weight Loss</option>
+                <option value="Weight Gain">Weight Gain</option>
+                <option value="Muscle Gain">Muscle Gain</option>
+                <option value="Maintain Weight">Maintain Weight</option>
+                <option value="General Fitness">General Fitness</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="activity_level">
+                <i class="fa-solid fa-person-walking"></i>
+                Activity Level
+            </label>
+
+            <select id="activity_level">
+
+                <option value="Sedentary">Sedentary</option>
+                <option value="Light">Lightly Active</option>
+                <option value="Moderate" selected>
+                    Moderately Active
+                </option>
+                <option value="Active">Very Active</option>
+                <option value="Very Active">
+                    Extremely Active
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="intensity">
+                <i class="fa-solid fa-bolt"></i>
+                Workout Intensity
+            </label>
+
+            <select id="intensity">
+
+                <option value="Low">Low</option>
+                <option value="Moderate" selected>
+                    Moderate
+                </option>
+                <option value="High">High</option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-submit">
+
+            <button
+                type="button"
+                id="generateBtn"
+                class="generate-btn"
+            >
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Generate My AI Plan
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DASHBOARD
+========================================================= -->
+
+<section
+    id="dashboard"
+    class="dashboard hidden"
+>
+
+    <!-- Dashboard Header -->
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <span class="section-label">
+                <i class="fa-solid fa-chart-line"></i>
+                Your Results
+            </span>
+
+            <h2>Your AI Fitness Dashboard</h2>
+
+            <p>
+                Personalized insights generated from your
+                information and AI model.
+            </p>
+
+        </div>
+
+        <div class="goal-display">
+
+            <i class="fa-solid fa-bullseye"></i>
+
+            <span id="goalLabel">
+                Goal
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Stats -->
+
+    <div class="stats-grid">
+
+        <div class="stat-card card interactive-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <span>BMI</span>
+
+                <strong id="bmiValue">—</strong>
+
+                <small id="bmiStatus">—</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card card interactive-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-fire-flame-curved"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <span>BMR</span>
+
+                <strong id="bmrValue">—</strong>
+
+                <small>Basal Metabolic Rate</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card card interactive-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-utensils"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <span>Daily Calories</span>
+
+                <strong id="calories">—</strong>
+
+                <small>Recommended target</small>
+
+            </div>
+
+        </div>
+
+
+        <div class="stat-card card interactive-card">
+
+            <div class="stat-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <div class="stat-content">
+
+                <span>Intensity</span>
+
+                <strong id="intensityLabel">—</strong>
+
+                <small>Workout intensity</small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Charts -->
+
+    <div class="charts-grid">
+
+        <div class="chart-card card">
+
+            <div class="chart-header">
+
+                <div>
+
+                    <h3>BMI Overview</h3>
+
+                    <p>Your current BMI level</p>
+
+                </div>
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+            </div>
+
+            <div class="chart-container">
+                <canvas id="bmiChart"></canvas>
+            </div>
+
+        </div>
+
+
+        <div class="chart-card card">
+
+            <div class="chart-header">
+
+                <div>
+
+                    <h3>Calorie Overview</h3>
+
+                    <p>BMR vs daily calorie target</p>
+
+                </div>
+
+                <i class="fa-solid fa-chart-column"></i>
+
+            </div>
+
+            <div class="chart-container">
+                <canvas id="calorieChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AI Coach -->
+
+    <section class="ai-recommendation-card card">
+
+        <div id="aiRecommendation">
+
+            <div class="ai-card-content">
+
+                <div class="ai-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div class="ai-text">
+
+                    <h3>AI Coach Recommendation</h3>
+
+                    <p>
+                        Generate your plan to see your
+                        personalized recommendation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Workout + Diet -->
+
+    <div class="recommendation-grid">
+
+
+        <!-- Workout -->
+
+        <section class="recommendation-card card">
+
+            <div class="recommendation-header">
+
+                <div class="recommendation-icon">
+                    <i class="fa-solid fa-person-running"></i>
+                </div>
+
+                <div>
+
+                    <h2>Today's Workout</h2>
+
+                    <p>
+                        Click an exercise when completed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <ul
+                id="workouts"
+                class="recommendation-list"
+            >
+
+                <li class="empty-state">
+                    Generate your plan to see workouts.
+                </li>
+
+            </ul>
+
+
+            <div class="mini-progress">
+
+                <div class="progress-info">
+
+                    <span>Workout Progress</span>
+
+                    <strong id="workoutProgressText">0%</strong>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="workoutProgress"
+                        class="progress-fill"
+                        style="width:0%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Diet -->
+
+        <section class="recommendation-card card">
+
+            <div class="recommendation-header">
+
+                <div class="recommendation-icon">
+                    <i class="fa-solid fa-bowl-food"></i>
+                </div>
+
+                <div>
+
+                    <h2>Today's Diet</h2>
+
+                    <p>
+                        Click a meal when completed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <ul
+                id="diet"
+                class="recommendation-list"
+            >
+
+                <li class="empty-state">
+                    Generate your plan to see diet recommendations.
+                </li>
+
+            </ul>
+
+
+            <div class="mini-progress">
+
+                <div class="progress-info">
+
+                    <span>Diet Progress</span>
+
+                    <strong id="dietProgressText">0%</strong>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        id="dietProgress"
+                        class="progress-fill"
+                        style="width:0%"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         OVERALL PROGRESS
+    ====================================================== -->
+
+    <section class="overall-progress card">
+
+        <div class="overall-header">
+
+            <div>
+
+                <h2>
+                    <i class="fa-solid fa-chart-line"></i>
+                    Today's Overall Progress
+                </h2>
+
+                <p>
+                    Complete workouts and diet tasks to improve
+                    your daily progress.
+                </p>
+
+            </div>
+
+            <strong id="overallProgressText">
+                0%
+            </strong>
+
+        </div>
+
+        <div class="large-progress-bar">
+
+            <div
+                id="overallProgress"
+                class="progress-fill"
+                style="width:0%"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CALORIE TRACKER
+    ====================================================== -->
+
+    <section class="calorie-tracker-card card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>
+                    <i class="fa-solid fa-fire"></i>
+                    Today's Calorie Intake
+                </h2>
+
+                <p>
+                    Track your meals and daily calorie consumption.
+                </p>
+
+            </div>
+
+            <button
+                type="button"
+                id="resetMealsBtn"
+                class="secondary-btn"
+            >
+
+                <i class="fa-solid fa-rotate-left"></i>
+                Reset
+
+            </button>
+
+        </div>
+
+
+        <div class="calorie-summary">
+
+            <div class="calorie-stat">
+
+                <span class="calorie-stat-icon">🔥</span>
+
+                <div>
+
+                    <small>Consumed</small>
+
+                    <strong id="caloriesConsumed">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="calorie-stat">
+
+                <span class="calorie-stat-icon">🎯</span>
+
+                <div>
+
+                    <small>Daily Target</small>
+
+                    <strong id="calorieTarget">
+                        Generate plan
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="calorie-stat">
+
+                <span class="calorie-stat-icon">📊</span>
+
+                <div>
+
+                    <small>Remaining</small>
+
+                    <strong id="caloriesRemaining">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="calorie-intake-progress">
+
+            <div class="progress-info">
+
+                <span>Daily calorie progress</span>
+
+                <strong id="calorieIntakePercent">
+                    0%
+                </strong>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div
+                    id="calorieIntakeProgress"
+                    class="progress-fill"
+                    style="width:0%"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="meal-form">
+
+            <h3>
+                <i class="fa-solid fa-plus"></i>
+                Add Meal
+            </h3>
+
+
+            <div class="meal-form-grid">
+
+                <div class="form-group">
+
+                    <label for="mealType">
+                        Meal
+                    </label>
+
+                    <select id="mealType">
+
+                        <option value="Breakfast">
+                            Breakfast
+                        </option>
+
+                        <option value="Lunch">
+                            Lunch
+                        </option>
+
+                        <option value="Snack">
+                            Snack
+                        </option>
+
+                        <option value="Dinner">
+                            Dinner
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="foodName">
+                        Food
+                    </label>
+
+                    <input
+                        type="text"
+                        id="foodName"
+                        placeholder="e.g. Rice and fish"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="foodCalories">
+                        Calories
+                    </label>
+
+                    <input
+                        type="number"
+                        id="foodCalories"
+                        min="1"
+                        max="10000"
+                        placeholder="e.g. 500"
+                    >
+
+                </div>
+
+
+                <div class="meal-add-button">
+
+                    <button
+                        type="button"
+                        id="addMealBtn"
+                        class="primary-btn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+                        Add Meal
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="meal-list-container">
+
+            <h3>
+                <i class="fa-solid fa-utensils"></i>
+                Today's Meals
+            </h3>
+
+            <div id="mealList">
+
+                <div class="empty-meals">
+
+                    <i class="fa-solid fa-bowl-food"></i>
+
+                    <p>No meals added yet.</p>
+
+                    <small>
+                        Add your first meal above.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         WATER
+    ====================================================== -->
+
+    <section class="water-card card">
+
+        <div class="water-header">
+
+            <div>
+
+                <h2>
+                    <i class="fa-solid fa-glass-water"></i>
+                    Daily Water
+                </h2>
+
+                <p>
+                    Stay hydrated throughout the day.
+                </p>
+
+            </div>
+
+            <strong id="waterValue">
+                0 / 8 glasses
+            </strong>
+
+        </div>
+
+
+        <div class="progress-bar">
+
+            <div
+                id="waterProgress"
+                class="progress-fill"
+                style="width:0%"
+            ></div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="waterBtn"
+            class="water-btn"
+        >
+
+            <i class="fa-solid fa-plus"></i>
+            Add Glass of Water
+
+        </button>
+
+    </section>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="main-footer">
+
+    <div class="footer-content">
+
+        <div>
+
+            <strong>AI Fitness Pro</strong>
+
+            <p>
+                AI-powered fitness recommendation system
+                for personalized health planning.
+            </p>
+
+        </div>
+
+        <div>
+
+            <span>CSE-AI Project</span>
+
+            <span>
+                Machine Learning • FastAPI • JavaScript
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 AI Fitness Pro. Academic Project.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script
+    src="script.js"
+    defer
+></script>
+
+</body>
+</html>
